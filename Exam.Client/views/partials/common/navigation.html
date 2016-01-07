@@ -1,0 +1,26 @@
+﻿<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-collapse collapse" id="navbar-main">
+
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li ng-if="vm.identity.isAuthenticated()"><a href="/projects/add">Add Project</a></li>
+                <li><a href="/commits">Commits</a></li>
+            </ul>
+
+            <div>
+                <ul class="nav navbar-nav navbar-right" ng-hide="vm.identity.isAuthenticated()">
+                    <li><a href="/identity/login">Login</a></li>
+                    <li><a href="/identity/register">Register</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right" ng-show="vm.identity.isAuthenticated()">
+                    <li><a href="/identity/profile">{{ vm.identity.getCurrentUser().userName }}</a></li>
+                    <li><a href="#" ng-click="vm.logout()">Logout</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div> <!-- end .navbar -->

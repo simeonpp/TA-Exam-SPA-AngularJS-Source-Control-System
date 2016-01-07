@@ -1,0 +1,51 @@
+﻿<div class="container">
+    <div class="jumbotron text-center">
+        <h1>{{vm.homeMessage}}</h1>
+        <h2>Single Page Application with Angular JS</h2>
+    </div>
+
+    <div class="row jumbotron text-center">
+        <div class="col-md-4">
+            <div><h3>Users</h3></div>
+            <div>{{vm.stats.Users}}</div>
+        </div>
+
+        <div class="col-md-4">
+            <div><h3>Projects</h3></div>
+            <div>{{vm.stats.Projects}}</div>
+        </div>
+
+        <div class="col-md-4">
+            <div><h3>Commits</h3></div>
+            <div>{{vm.stats.Commits}}</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="bs-component">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-center">Latest software projects</h3>
+                    </div>
+                    <div class="panel-body col-md-12">
+                        <div projects-directive></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="bs-component">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-center">Latest source code commits</h3>
+                    </div>
+                    <div class="panel-body col-md-12">
+                        <div commits-directive></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,28 @@
+﻿<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>TotalUsers</th>
+            <th>License</th>
+            <th>Created on</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="project in vm.projects">
+            <td>
+                <div ng-if="vm.identity.isAuthenticated()"><a href="/projects/{{project.Id}}">{{project.Name}}</a></div>
+                <div ng-if="!vm.identity.isAuthenticated()">{{project.Name}}</div>
+            </td>
+            <td>{{project.TotalUsers}}</td>
+            <td>
+                <div ng-if="vm.identity.isAuthenticated()">
+                    <div class="licenseImage">
+                        <img src="/assets/images/{{project.License}}.png" alt="{{project.License}} license icon" />
+                    </div>
+                </div>
+                <div ng-if="!vm.identity.isAuthenticated()">{{project.License}}</div>
+            </td>
+            <td>{{project.CreatedOn | beatifulDate}}</td>
+        </tr>
+    </tbody>
+</table>

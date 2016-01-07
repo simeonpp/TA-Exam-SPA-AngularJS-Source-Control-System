@@ -1,0 +1,46 @@
+﻿body {
+    margin-top: 20px !important;
+}
+
+.error {
+    color: red;
+}
+
+.imageWrap img {
+    width: 100%;
+}
+
+.jumbotron {
+    background-color: #EDEDED;
+}
+
+footer {
+    margin: 25px 0;
+    padding: 20px 0;
+    background-color: #FCFCFC !important;
+    border: 1px solid #ecf0f1;
+    border-left: none;
+    border-right: none;
+}
+
+h1 {
+    font-size: 55px !important;
+}
+
+.licenseImage {
+    width: 40px;
+    height: 40px
+    background: pink;
+}
+
+.licenseImage img {
+    width: 100%;
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+.italic {
+    font-style: italic;
+}

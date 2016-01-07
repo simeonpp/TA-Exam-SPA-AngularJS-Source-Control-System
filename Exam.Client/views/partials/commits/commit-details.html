@@ -1,0 +1,21 @@
+﻿<div class="container">
+
+    <h2 style="margin-bottom:20px">Commit for project <strong>'{{vm.commitInfo.ProjectName}}'</strong> </h2>
+
+    <div class="jumbotron row">
+
+        <div class="row">
+            <strong>Make by user:</strong> {{vm.commitInfo.UserName}}
+        </div>
+
+        <div class="row">
+            <strong>Date posted:</strong> {{vm.commitInfo.CreatedOn | beatifulDate}}
+        </div>
+            
+        <div class="row">
+            <div class="bold">Source code:</div>
+            <div class="italic">{{vm.commitInfo.SourceCode}}</div>
+        </div>
+    </div>
+
+</div>

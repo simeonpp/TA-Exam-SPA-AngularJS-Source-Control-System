@@ -1,0 +1,148 @@
+﻿<div class="container">
+
+    <h2 style="margin-bottom:20px">{{vm.projectInfo.Name}} </h2>
+
+    <div class="jumbotron row text-center">
+        <div class="col-md-3">
+            <div class="row">Id</div>
+            <div class="row">{{vm.projectInfo.Id}}</div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="row">Total users</div>
+            <div class="row">{{vm.projectInfo.TotalUsers}}</div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="row">License</div>
+            <div class="row">
+                <div class="licenseImage" style="margin: 0 auto">
+                    <img src="/assets/images/{{vm.projectInfo.License}}.png" alt="{{vm.projectInfo.License}} license icon" />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="row">Created on</div>
+            <div class="row">{{vm.projectInfo.CreatedOn | beatifulDate}}</div>
+        </div>
+    </div>
+
+    <div class="row jumbotron">
+        <h2 style="margin-bottom:20px">
+            Commits
+            <a href="/projects/{{vm.projectInfo.Id}}/addcommits " class="btn btn-sm btn-primary pull-right">Add new commit</a>
+        </h2>
+
+        <div class="row well">
+            <h4>Server filtering</h4>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <div class="row text-center">
+                        <label for="byUser" class="col-lg-12 control-label">By user (email)</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <input type="email" ng-model="vm.request.username" class="form-control" id="byUser" placeholder="Email">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 text-center">
+                <div class="row">Page</div>
+
+                <div class="col-md-3">
+                    <button class="btn btn-primary btn-sm" ng-click="vm.prevPage()">&lt;&lt;</button>
+                </div>
+                <div class="col-md-6">
+                    <input type="number" ng-model="vm.request.page" class="form-control" />
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-primary btn-sm" ng-click="vm.nextPage()">&gt;&gt;</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row well">
+            <h4>Client filtering</h4>
+
+            <div class="col-md-4">
+                <div class="row">
+                    <label for="filterFromCreationTime" class="col-lg-12 control-label">From creation time</label>
+                </div>
+                <div class="row">
+                    <input name="filterFromCreationTime" id="filterFromCreationTime" ng-model="vm.commitClientFilter.fromCreationTime" kendo-datetimepicker />
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="row">
+                    <label for="filterToCreationTime" class="col-lg-12 control-label">To creation time</label>
+                </div>
+                <div class="row">
+                    <input name="filterToCreationTime" id="filterToCreationTime" ng-model="vm.commitClientFilter.toCreationTime" kendo-datetimepicker />
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="checkbox">
+                    <label for="onlyCurrentUserCommits">
+                        <input id="onlyCurrentUserCommits" type="checkbox" checked ng-model="vm.commitClientFilter.onlyCurrentUser"> Only mine
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-3 pull-right">
+            <button class="btn btn-primary pull-right" ng-click="vm.filterCommits()">Filter</button>
+        </div>
+
+        <div class="row">
+            <div commits-directive></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <h2 style="margin-bottom:20px">
+            Collaborators
+        </h2>
+
+        <div class="row">
+            <div collaborators-directive></div>
+        </div>
+
+        <div class="row" ng-show="vm.allowedToAddCollaborators">
+            You are collaborator in this project which gives you an options to add other collaborators by e-mail
+
+            <div class="row">
+                <form name="addCollaboratorForm" class="form-horizontal">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input id="collaboratorEmail"
+                                       type="email"
+                                       placeholder="Collaborator email"
+                                       ng-model="collaborator.email"
+                                       required="required"
+                                       class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <button ng-click="vm.addCollaborator(collaborator, addCollaboratorForm)" class="btn btn-success btn-sm">
+                            Add
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>

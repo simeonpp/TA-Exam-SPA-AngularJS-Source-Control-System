@@ -1,0 +1,106 @@
+﻿<div class="container">
+    <h2 class="text-center">
+        Projects
+        <a href="/projects/add" ng-show="vm.identity.isAuthenticated()" class="btn btn-sm btn-primary pull-right">Create new project</a>
+    </h2>
+
+    <div ng-show="vm.identity.isAuthenticated()" class="row">
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <div class="row text-center">
+                        <label for="filter" class="col-lg-12 control-label">Filter name/description</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <input type="text" ng-model="vm.request.filter" class="form-control" id="filter" placeholder="Name / Description">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <div class="text-center">
+                        <label for="orderBy" class=" control-label">Order by</label>
+                    </div>
+                    <div>
+                        <select kendo-drop-down-list class="form-control fullWidth" required="required" ng-init="vm.request.orderBy='date'" ng-model="vm.request.orderBy" id="orderBy">
+                            <option value="date">Date</option>
+                            <option value="collaborators">Collaborators</option>
+                            <option value="name">Name</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <div class="text-center">
+                        <label for="orderType" class="control-label">Order Type</label>
+                    </div>
+                    <div>
+                        <select kendo-drop-down-list class="form-control fullWidth" required="required" ng-init="vm.request.orderType='asc'" ng-model="vm.request.orderType" id="orderType">
+                            <option value="asc">Ascending</option>
+                            <option value="desc">Descending</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <div class="row text-center">
+                        <label for="byUser" class="col-lg-12 control-label">By user (email)</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <input type="text" ng-model="vm.request.byUser" class="form-control" id="byUser" placeholder="Email">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label for="onlyPublic">
+                            <input id="onlyPublic" type="checkbox" checked ng-model="vm.request.onlyPublic"> Public
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 text-center">
+                <div class="col-md-3">
+                    <button class="btn btn-primary btn-sm" ng-click="vm.prevPage()">&lt;&lt;</button>
+                </div>
+                <div class="col-md-6">
+                    <input type="number" ng-model="vm.request.page" class="form-control" />
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-primary btn-sm" ng-click="vm.nextPage()">&gt;&gt;</button>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <button class="btn btn-primary pull-right" ng-click="vm.filterProjects()">Filter</button>
+            </div>
+
+        </div>
+
+</div>
+
+    <br /> <br />
+<div ng-show="vm.projects && vm.projects.length > 0">
+    <div projects-directive />
+</div>
+<div ng-hide="vm.projects && vm.projects.length > 0">
+    <h2 class="text-center">No results!</h2>
+</div>
+</div>

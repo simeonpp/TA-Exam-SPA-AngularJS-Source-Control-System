@@ -1,0 +1,29 @@
+﻿<div class="container">
+    <div class="well">
+        <form name="addCommitForm" class="form-horizontal">
+            <fieldset>
+                <legend>Add new commit</legend>
+
+                <div class="form-group">
+                    <label for="commitSourceCode" class="col-lg-2 control-label">Commit source code</label>
+                    <div class="col-lg-10">
+                        <textarea ng-model="commit.sourceCode"
+                                  class="form-control"
+                                  rows="3"
+                                  id="textArea"
+                                  required="required"></textarea>
+                        <span class="help-block">.</span>
+                    </div>
+                </div>
+
+                <div class="pull-right">
+                    <a href="/projects/{{vm.projectId}}" class="btn btn-info">Cancel</a>
+                    <button ng-click="vm.addCommit(commit, addCommitForm)" class="btn btn-success">
+                        Create
+                    </button>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</div>

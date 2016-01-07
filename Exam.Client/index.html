@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>SPA Exam 2015 (Angular Client) @ Telerik Software Academy</title>
+	<meta charset="utf-8" />
+    <base href="/" />
+
+    <!-- styles -->
+    <link href="assets/styles/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/styles/bootstrap/usebootstrap.css" rel="stylesheet" />
+    <link href="assets/styles/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="assets/styles/kendo/kendo.common.min.css" rel="stylesheet" />
+    <link href="assets/styles/kendo/kendo.default.min.css" rel="stylesheet" />
+    <link href="assets/styles/style.css" rel="stylesheet" />
+
+    <!-- libs -->
+    <script src="assets/scripts/libs/jquery-1.10.2.min.js"></script>
+    <script src="assets/scripts/libs/bootstrap.min.js"></script>
+    <script src="assets/scripts/libs/angular/angular.js"></script>
+    <script src="assets/scripts/libs/angular/angular-route.js"></script>
+    <script src="assets/scripts/libs/angular/angular-cookies.js"></script>
+    <script src="assets/scripts/libs/toastr/toastr.min.js"></script>
+    <script src="assets/scripts/libs/kendo/kendo.web.min.js"></script>
+    <script src="assets/scripts/libs/kendo/kendo.angular.min.js"></script>
+
+    <!--src -->
+    <script src="assets/scripts/src/app/app.js"></script>
+    <script src="assets/scripts/src/app/common/constants.js"></script>
+    <script src="assets/scripts/src/app/common/values.js"></script>
+    <script src="assets/scripts/src/app/common/filters/beatiful-data-filter.js"></script>
+    <script src="assets/scripts/src/app/common/services/data-service.js"></script>
+    <script src="assets/scripts/src/app/common/services/log-service.js"></script>
+    <script src="assets/scripts/src/app/common/services/notification-service.js"></script>
+    <script src="assets/scripts/src/app/identity/auth-service.js"></script>
+    <script src="assets/scripts/src/app/identity/authorization.js"></script>
+    <script src="assets/scripts/src/app/identity/identity-service.js"></script>
+
+    <script src="assets/scripts/src/app/common/controllers/main-controller.js"></script>
+    <script src="assets/scripts/src/app/common/controllers/not-authorized-controller.js"></script>
+    <script src="assets/scripts/src/app/home/home-controller.js"></script>
+    <script src="assets/scripts/src/app/identity/login-controller.js"></script>
+    <script src="assets/scripts/src/app/identity/register-controller.js"></script>
+
+    <script src="assets/scripts/src/app/home/statistics-service.js"></script>
+
+    <script src="assets/scripts/src/app/projects/project-details-controller.js"></script>
+    <script src="assets/scripts/src/app/projects/projects-add-controller.js"></script>
+    <script src="assets/scripts/src/app/projects/projects-directive.js"></script>
+    <script src="assets/scripts/src/app/projects/projects-list-controller.js"></script>
+    <script src="assets/scripts/src/app/projects/projects-service.js"></script>
+
+    <script src="assets/scripts/src/app/commits/commit-add-controller.js"></script>
+    <script src="assets/scripts/src/app/commits/commit-detail-controller.js"></script>
+    <script src="assets/scripts/src/app/commits/commits-directive.js"></script>
+    <script src="assets/scripts/src/app/commits/commits-service.js"></script>
+    <script src="assets/scripts/src/app/commits/commits-list-controller.js"></script>
+
+    <script src="assets/scripts/src/app/collaborators/collaborators-directive.js"></script>
+    <script src="assets/scripts/src/app/collaborators/collaborators-service.js"></script>
+</head>
+<body ng-app="myApp" ng-cloak ng-controller="MainController as vm">
+
+    <div ng-include="'views/partials/common/navigation.html'"></div>
+
+    <div ng-view></div>
+
+    <div ng-include="'views/partials/common/footer.html'"></div>
+
+</body>
+</html>

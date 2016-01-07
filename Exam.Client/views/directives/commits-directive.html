@@ -1,0 +1,17 @@
+﻿<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Created on</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="commit in vm.commits">
+            <td>
+                <div ng-if="vm.identity.isAuthenticated()"><a href="/commits/{{commit.Id}}">{{commit.UserName}}</a></div>
+                <div ng-if="!vm.identity.isAuthenticated()">{{commit.UserName}}</div>
+            </td>
+            <td>{{commit.CreatedOn | beatifulDate}}</td>
+        </tr>
+    </tbody>
+</table>
