@@ -1,5 +1,5 @@
 # SPA-AngularJS-Source-Control-System
-Single Page Application with AngularJS
+Single Page Application with AngularJS, Bootstrap and Kendo.
 
 main js files folder: https://github.com/simeonpp/SPA-AngularJS-Source-Control-System/tree/master/Exam.Client/assets/scripts/src/app
 
